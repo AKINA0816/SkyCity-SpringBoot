@@ -1,0 +1,23 @@
+.navbar{
+    background-color: white;
+}
+.navbar .nav-item .nav-link{
+    color: black;
+}
+.navbar .nav-item:hover .nav-link{
+    color: mediumpurple;
+}
+
+.sidebar .nav-item .nav-link{
+    color: black;
+}
+.sidebar .nav-item:hover .nav-link{
+    color: mediumpurple;
+}
+.sidebar .sidebarDiv:hover{
+    background-color: #e6e6e6;
+}
+.container-fluid .row iframe{
+    width: 360px;
+    height: 220px;
+}
