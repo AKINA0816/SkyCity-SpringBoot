@@ -21,3 +21,6 @@
     width: 360px;
     height: 220px;
 }
+.has-error{
+    color: red;
+}
