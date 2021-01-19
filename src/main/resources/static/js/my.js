@@ -40,9 +40,28 @@ $(function() {
                         min: 6,
                         max: 30,
                         message: '密码长度必须在6到30之间'
+                    },
+                    identical:{
+                        field: 'password',
+                        message: '密码不匹配'
                     }
+
                 }
             },
+            password2: {
+                message: '密码无效',
+                validators: {
+                    notEmpty:{
+                        message: '密码不能为空'
+                    },
+                    identical: {
+                        field: 'password',
+                        message: '密码不匹配'
+                    }
+
+                }
+            }
+
         }
     });
     //提交按钮,所有验证通过方可提交
@@ -55,5 +74,37 @@ $(function() {
             }
         });
 });
-
+$(function() {
+    $('#login').bootstrapValidator({
+        excluded: [':disabled', ':hidden', ':not(:visible)'],//默认指定不验证的情况
+        message : 'This value is not valid',
+        fields : {
+            name: {  /*键名name和input name值对应*/
+                message: '用户名不能为空',
+                validators: {
+                    notEmpty: { /*非空提示*/
+                        message: '用户名必填不能为空'
+                    },
+                }
+            },
+            password: {
+                message:'密码无效',
+                validators: {
+                    notEmpty: {
+                        message: '密码不能为空'
+                    },
+                }
+            },
+        }
+    });
+    //提交按钮,所有验证通过方可提交
+    $("#loginButton").click(
+        function() {
+            var flag = $('#login').bootstrapValidator(
+                'validate').data('bootstrapValidator').isValid();
+            if (flag) {
+                // pass
+            }
+        });
+});
 

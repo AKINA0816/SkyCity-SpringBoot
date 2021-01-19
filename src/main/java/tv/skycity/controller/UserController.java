@@ -4,13 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import tv.skycity.mapper.UserMapper;
 import tv.skycity.model.User;
-
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -21,17 +19,18 @@ public class UserController {
     @PostMapping("/register")
     public String addUser(User user){
         userMapper.addUser(user);
-        return "redirect:/index";
+        return "index";
     }
 
     @PostMapping("/login")
-    public String login(User user){
+        public String login(User user, Model model, HttpServletResponse httpServletResponse){
         User user1 = userMapper.selectByNameAndPassword(user);
         if (user1 == null){
-            return "redirect:/fail";
+            // pass
         }else {
-            return "redirect:/index";
+            model.addAttribute("name",user1.getName());
         }
+        return "index";
     }
 
     @PostMapping("/findByName")
@@ -49,5 +48,6 @@ public class UserController {
         }
         return map;
     }
+
 
 }
