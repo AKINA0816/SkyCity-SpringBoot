@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -75,15 +77,15 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
-  </head>
+</head>
   <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" th:action="@{/backend}" method="post">
   <img class="mb-4" src="img/skycity.png" alt="" width="140" height="72">
   <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
   <label class="sr-only">用户名</label>
-  <input type="text" class="form-control" placeholder="用户名" required autofocus>
+  <input type="text" class="form-control" placeholder="用户名" required autofocus name="username">
   <label for="inputPassword" class="sr-only">密码</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+  <input type="password" id="inputPassword" class="form-control" placeholder="密码" required name="password">
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> 记住我
