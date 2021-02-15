@@ -23,7 +23,7 @@ $(function() {
                     remote: { //ajax验证。server result:{"valid",true or false} （返回前台类型）
                         url: "/findByName",
                         message: '用户名已存在,请重新输入',
-                        delay: 800, //ajax刷新的时间是0.8秒一次
+                        delay: 500, //ajax刷新的时间是0.8秒一次
                         type: 'POST',
                     },
 
