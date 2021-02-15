@@ -4,12 +4,23 @@ Also, the website provide google map, weather forecast, free wallpaper to downlo
 
 ## Requirements
 
-1. Mysql
+1. Setup Mysql
+```mysql
+create database skycity;
+use skycity;
+create table t_user (
+id int(10) auto_increment primary key,
+name varchar(30) not null,
+password varchar(30) not null
+)
+```
+
 
 ## Usage
 1. Edit application.properties with your own database url, username and password
 2. Run SkycityApplication Class 
 3. Visit [http://localhost:8080/](http://localhost:8080/)
+
 
 ## Framework
 - Front end: Bootstrap4.1+Thymeleaf
@@ -26,3 +37,5 @@ Also, the website provide google map, weather forecast, free wallpaper to downlo
 ### 2. For administrator
 
 - Create, read, update and delete users
+
+
