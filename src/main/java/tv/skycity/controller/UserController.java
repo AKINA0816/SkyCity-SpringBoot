@@ -6,8 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import tv.skycity.mapper.UserMapper;
 import tv.skycity.model.User;
+
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,12 +26,15 @@ public class UserController {
     }
 
     @PostMapping("/login")
-        public String login(User user, Model model, HttpServletResponse httpServletResponse){
+        public String login(User user, HttpSession session, HttpServletResponse httpServletResponse, Model model){
         User user1 = userMapper.selectByNameAndPassword(user);
         if (user1 == null){
             // pass
         }else {
             model.addAttribute("name",user1.getName());
+            Cookie cookie = new Cookie("username",user1.getName());
+            cookie.setMaxAge(24*60*60);  // expire after one day
+            httpServletResponse.addCookie(cookie);
         }
         return "index";
     }

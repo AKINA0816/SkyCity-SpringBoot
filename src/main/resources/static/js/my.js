@@ -1,3 +1,4 @@
+// 注册 modal
 $(function() {
     $('#register').bootstrapValidator({
         excluded: [':disabled', ':hidden', ':not(:visible)'],//默认指定不验证的情况
@@ -74,37 +75,51 @@ $(function() {
             }
         });
 });
-$(function() {
-    $('#login').bootstrapValidator({
-        excluded: [':disabled', ':hidden', ':not(:visible)'],//默认指定不验证的情况
-        message : 'This value is not valid',
-        fields : {
-            name: {  /*键名name和input name值对应*/
-                message: '用户名不能为空',
-                validators: {
-                    notEmpty: { /*非空提示*/
-                        message: '用户名必填不能为空'
-                    },
-                }
-            },
-            password: {
-                message:'密码无效',
-                validators: {
-                    notEmpty: {
-                        message: '密码不能为空'
-                    },
-                }
-            },
-        }
-    });
-    //提交按钮,所有验证通过方可提交
-    $("#loginButton").click(
-        function() {
-            var flag = $('#login').bootstrapValidator(
-                'validate').data('bootstrapValidator').isValid();
-            if (flag) {
-                // pass
-            }
-        });
+
+$('#personalInfo').modal({
+    backdrop: false,
+    show : false,
+    keyboard: true
 });
+
+// chatbox scroll bar
+$(document).ready(function () {
+    if (!$.browser.webkit) {
+        $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
+    }
+});
+// login modal
+// $(function() {
+//     $('#login').bootstrapValidator({
+//         excluded: [':disabled', ':hidden', ':not(:visible)'],//默认指定不验证的情况
+//         message : 'This value is not valid',
+//         fields : {
+//             name: {  /*键名name和input name值对应*/
+//                 message: '用户名不能为空',
+//                 validators: {
+//                     notEmpty: { /*非空提示*/
+//                         message: '用户名必填不能为空'
+//                     },
+//                 }
+//             },
+//             password: {
+//                 message:'密码无效',
+//                 validators: {
+//                     notEmpty: {
+//                         message: '密码不能为空'
+//                     },
+//                 }
+//             },
+//         }
+//     });
+//     //提交按钮,所有验证通过方可提交
+//     $("#loginButton").click(
+//         function() {
+//             var flag = $('#login').bootstrapValidator(
+//                 'validate').data('bootstrapValidator').isValid();
+//             if (flag) {
+//                 // pass
+//             }
+//         });
+// });
 

@@ -64,16 +64,17 @@
         </form>
     </div>
     <div>
-        <button type="button" class="btn btn-outline-secondary btn-sm" th:classappend="${name} ? invisible : visible" data-toggle="modal" data-target="#mylogin">登陆</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm" th:classappend="${name} ? invisible : visible" data-toggle="modal" data-target="#mylogin">登录</button>
         <button type="button" class="btn btn-info btn-sm" th:classappend="${name} ? invisible : visible" data-toggle="modal" data-target="#myregister">注册</button>
-        <button type="button" class="btn btn-sm"><i class="far fa-user"></i> </button>
+        <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#personalInfo"><i class="far fa-user"></i> </button>
         <span th:if="${name}" th:text="'欢迎您! '+ ${name}"></span>
-        <span th:unless="${name}"> 未登陆 </span>
+        <span th:unless="${name}"> 未登录 </span>
     </div>
 </nav>
 
 <!-- 主窗体 -->
 <div class="container-fluid" >
+
     <div class="row">
         <!-- 侧边导航栏未完全完成 -->
         <nav id="sidebarMenu" class="col-sm-2 d-md-block bg-light sidebar collapse ">
@@ -103,7 +104,7 @@
                     </div>
                     <div class="sidebarDiv">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/index">
                                 音乐
                             </a>
                         </li>
@@ -177,34 +178,58 @@
                     <div><button type="button" class="btn btn-sm btn-outline-info ml-2">时下流行</button> </div>
                 </div>
                 <div class="row p-2 ml-lg-1"></div>
-                <div class="row p-2 ml-lg-1"><h5>中文频道</h5></div>
+                <div class="row p-2 ml-lg-1"><h5>时下流行</h5></div>
+
                 <div class="row p-2 ml-lg-1">
-                    <iframe width="400" height="230" src="https://www.youtube.com/embed/videoseries?list=PLj6NQzHFCvkGOAwI_ofdmAmWiEO2QhVp2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="ml-2">
-                        <iframe width="400" height="230" src="https://www.youtube.com/embed/z6rB46-8W5U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="ml-2">
-                        <iframe width="400" height="230" src="https://www.youtube.com/embed/ENKFTmJxBaY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="p-1 shadow shadow-sm">
+<!--                        <ul class="section-nav">-->
+<!--                            <li class="toc-entry toc-h2"><a href="#inline-code">Inline code</a></li>-->
+<!--                            <li class="toc-entry toc-h2"><a href="#code-blocks">Code blocks</a></li>-->
+<!--                            <li class="toc-entry toc-h2"><a href="#variables">Variables</a></li>-->
+<!--                            <li class="toc-entry toc-h2"><a href="#user-input">User input</a></li>-->
+<!--                            <li class="toc-entry toc-h2"><a href="#sample-output">Sample output</a></li>-->
+<!--                        </ul>-->
+                        <div>
+                            <h6 style="color: forestgreen; text-align:center">聊天室</h6>
+                        </div>
+                        <ul class="chatBox" id="style-3">
+                            <li>first senttence sssssssss</li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                            <li class="charInfo">first senttence </li>
+                        </ul>
+                        <br>
+                        <div>
+                            <textarea rows="2" cols="25"></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary btn-sm">发送</button>
+                        </div>
+
                     </div>
                 </div>
+                <!--                    <div class="ml-2">-->
 
-                <div class="row p-2 ml-lg-1"></div>
+                <div class="row p-2 ml-lg-1">....</div>
 
-                <div class="row p-2 ml-lg-1"><h5>英文频道</h5></div>
-                <div class="row p-2 ml-lg-1">
-                    <iframe width="400" height="230" src="https://www.youtube.com/embed/OiIBFXnM_EE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="ml-2">
-                        <iframe width="400" height="230" src="https://www.youtube.com/embed/videoseries?list=PLogBXxHVJONCPchzFNRTKjx7-1OYsZegb" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <div class="row p-2 ml-lg-1"></div>
-
-                <div class="row p-2 ml-lg-1"><h5>日文频道</h5></div>
             </div>
 
         </main>
     </div>
+
 </div>
 
 <!-- 模态窗口, 注册和登陆 -->
@@ -213,7 +238,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">快速注册</h5>
-                <a href="#mylogin" data-toggle="modal" data-dismiss="modal">登陆</a>
+                <a href="#mylogin" data-toggle="modal" data-dismiss="modal">登录</a>
             </div>
 
             <form action="/register" method="post" id="register"
@@ -252,7 +277,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h4>登陆</h4>
+                <h4>登录</h4>
             </div>
 
 
@@ -271,18 +296,37 @@
                 </div>
                 <div class="modal-footer">
                     <button data-dismiss="modal" class="btn btn-default" type="button">关闭</button>
-                    <button class="btn btn-primary" type="submit" form="login" id="loginButton">登陆</button>
+                    <button class="btn btn-primary" type="submit" form="login" id="loginButton">登录</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<!-- 模态窗口, 个人信息-->
+<div class="modal fade" id="personalInfo" tabindex="-1" role="dialog" aria-labelledby="personalInfo">
+    <div class="modal-dialog shadow-sm" style="width: 70%">
+        <div class="modal-content" style="height: 100%">
+            <div class="modal-header">
+                <div th:if="${name}">
+                    <img class="img-circle" th:src="@{/img/skycity.png}" height="30" width="30" alt="头像"/>
+                </div>
+                <div th:if="${name}" th:text="${name}">
 
+                </div>
+                <div th:unless="${name}"> 未登录 </div>
+            </div>
+            <div class="modal-body">
+                <div th:if="${name}"> <a class="nav-link" href="/userSetting"> 设置</a> </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-outline-info" data-dismiss="modal">关闭</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 <!-- Script -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-<!-- Bootstrap 4.1-->
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/62a03dc0b0.js" crossorigin="anonymous"></script>

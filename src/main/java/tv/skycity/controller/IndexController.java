@@ -1,18 +1,39 @@
 package tv.skycity.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import tv.skycity.util.GetUsernameFromCookie;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class IndexController {
+    @RequestMapping("/")
+    public String slash(Model model, HttpServletRequest httpServletRequest){
+        String username = GetUsernameFromCookie.getUsernameFromCookie(httpServletRequest);
+        if (GetUsernameFromCookie.isLoggedIn(username)){
+            model.addAttribute("name", username);
+        }
 
-    @RequestMapping("/index")
-    public String index(){
         return "index";
+    }
+    @RequestMapping("/index")
+    public String index(Model model, HttpServletRequest httpServletRequest){
+        String username = GetUsernameFromCookie.getUsernameFromCookie(httpServletRequest);
+        if (GetUsernameFromCookie.isLoggedIn(username)){
+            model.addAttribute("name", username);
+        }
+        return "index";
+    }
+
+    @RequestMapping("/userSetting")
+    public String userSetting(Model model, HttpServletRequest httpServletRequest){
+        String username = GetUsernameFromCookie.getUsernameFromCookie(httpServletRequest);
+        if (GetUsernameFromCookie.isLoggedIn(username)){
+            model.addAttribute("name", username);
+        }
+        return "userSetting";
     }
 
 }

@@ -17,10 +17,45 @@
 .sidebar .sidebarDiv:hover{
     background-color: #e6e6e6;
 }
+/**一行三个**/
+/*.container-fluid .row iframe{*/
+/*    width: 512px;*/
+/*    height: 220px;*/
+/*}*/
+/**单个**/
 .container-fluid .row iframe{
-    width: 360px;
-    height: 220px;
+    width: 1160px;
+    height: 630px;
 }
 .has-error{
     color: red;
+}
+#personalInfo{
+    position: absolute;
+    top: 4%;
+    left: 85%;
+    bottom: 0;
+}
+.chatBox{
+    height: 60%;
+    overflow-y: scroll;
+}
+.charInfo{
+    list-style: none;
+    border-top: 5px solid white;
+}
+#style-3::-webkit-scrollbar-track
+{
+    background-color: #ffffff;
+}
+
+#style-3::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #ffffff;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+    background-color: #9c9c9c;
 }
