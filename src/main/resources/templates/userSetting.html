@@ -159,6 +159,18 @@
                         <div class="row">
                             <h1>用户设置</h1>
                         </div>
+                        <div class="row">
+                            <h3>头像</h3>
+                        </div>
+                        <div class="row">
+                            <form action="/avatar_update" method="post" enctype="multipart/form-data">
+                                <input type="file" name="avatar" accept="image/png, image/jpeg">
+                                <input type="submit" class="btn btn-sm btn-success" value="提交">
+                            </form>
+                        </div>
+                        <div class="row">
+                            <span th:if="${uploadMessage}" th:text="${uploadMessage}"></span>
+                        </div>
 
                     </div>
                 </div>

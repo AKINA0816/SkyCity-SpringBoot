@@ -13,6 +13,7 @@ public class IndexController {
     public String slash(Model model, HttpServletRequest httpServletRequest){
         String username = GetUsernameFromCookie.getUsernameFromCookie(httpServletRequest);
         if (GetUsernameFromCookie.isLoggedIn(username)){
+            model.addAttribute("infoAvatar","/CrazyFrog.jpg");
             model.addAttribute("name", username);
         }
 
@@ -23,6 +24,7 @@ public class IndexController {
         String username = GetUsernameFromCookie.getUsernameFromCookie(httpServletRequest);
         if (GetUsernameFromCookie.isLoggedIn(username)){
             model.addAttribute("name", username);
+            model.addAttribute("infoAvatar","/CrazyFrog.jpg");
         }
         return "index";
     }
@@ -32,6 +34,7 @@ public class IndexController {
         String username = GetUsernameFromCookie.getUsernameFromCookie(httpServletRequest);
         if (GetUsernameFromCookie.isLoggedIn(username)){
             model.addAttribute("name", username);
+            model.addAttribute("infoAvatar","/CrazyFrog.jpg");
         }
         return "userSetting";
     }

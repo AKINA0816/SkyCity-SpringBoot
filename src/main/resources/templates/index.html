@@ -66,7 +66,10 @@
     <div>
         <button type="button" class="btn btn-outline-secondary btn-sm" th:classappend="${name} ? invisible : visible" data-toggle="modal" data-target="#mylogin">登录</button>
         <button type="button" class="btn btn-info btn-sm" th:classappend="${name} ? invisible : visible" data-toggle="modal" data-target="#myregister">注册</button>
-        <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#personalInfo"><i class="far fa-user"></i> </button>
+        <button type="button" class="my-button" th:style="'background:url(' + @{${infoAvatar}} + ');'" data-toggle="modal" data-target="#personalInfo">
+<!--            <i class="far fa-user"></i> -->
+<!--            <img th:src="@{${infoAvatar}}" height="30" width="30" alt="头像"/>-->
+        </button>
         <span th:if="${name}" th:text="'欢迎您! '+ ${name}"></span>
         <span th:unless="${name}"> 未登录 </span>
     </div>
@@ -308,7 +311,7 @@
         <div class="modal-content" style="height: 100%">
             <div class="modal-header">
                 <div th:if="${name}">
-                    <img class="img-circle" th:src="@{/img/skycity.png}" height="30" width="30" alt="头像"/>
+                    <img class="img-circle" th:src="@{${infoAvatar}}" height="30" width="30" alt="头像"/>
                 </div>
                 <div th:if="${name}" th:text="${name}">
 
