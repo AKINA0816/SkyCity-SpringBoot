@@ -28,9 +28,8 @@ password varchar(30) not null
 
 ## Todo-list
 ### 1. For user 
-- View & update personal info
-- Live chat with other user
-- Google map
+- Update personal info
+- Integrate Google map
 - Weather forecast
 - Calendar
 
