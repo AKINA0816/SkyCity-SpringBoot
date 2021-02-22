@@ -185,42 +185,25 @@
 
                 <div class="row p-2 ml-lg-1">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="p-1 shadow shadow-sm">
-<!--                        <ul class="section-nav">-->
-<!--                            <li class="toc-entry toc-h2"><a href="#inline-code">Inline code</a></li>-->
-<!--                            <li class="toc-entry toc-h2"><a href="#code-blocks">Code blocks</a></li>-->
-<!--                            <li class="toc-entry toc-h2"><a href="#variables">Variables</a></li>-->
-<!--                            <li class="toc-entry toc-h2"><a href="#user-input">User input</a></li>-->
-<!--                            <li class="toc-entry toc-h2"><a href="#sample-output">Sample output</a></li>-->
-<!--                        </ul>-->
+                    <div class="p-1 shadow shadow-sm chat-room">
                         <div>
                             <h6 style="color: forestgreen; text-align:center">聊天室</h6>
                         </div>
                         <ul class="chatBox" id="style-3">
-                            <li>first senttence sssssssss</li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
-                            <li class="charInfo">first senttence </li>
+<!--                            <li class="chat-message">first senttence ssssssssssssssssssssssssssssssssssssssssss</li>-->
+
                         </ul>
                         <br>
-                        <div>
-                            <textarea rows="2" cols="25"></textarea>
-                        </div>
-                        <div>
-                            <button class="btn btn-primary btn-sm">发送</button>
-                        </div>
+                        <form id="messageForm" name="messageForm">
+                            <div class="messageBox">
+                                <input type="text" autocomplete="off" id="message" placeholder="说点什么.." rows="2" cols="25"></input>
+                            </div>
+                            <br>
+                            <div class="messageBox">
+                                <button type="submit" class="btn btn-primary btn-sm">发送</button>
+                            </div>
+                        </form>
+
 
                     </div>
                 </div>
@@ -313,7 +296,7 @@
                 <div th:if="${name}">
                     <img class="img-circle" th:src="@{${infoAvatar}}" height="30" width="30" alt="头像"/>
                 </div>
-                <div th:if="${name}" th:text="${name}">
+                <div id="modal-username" th:if="${name}" th:text="${name}">
 
                 </div>
                 <div th:unless="${name}"> 未登录 </div>
@@ -334,6 +317,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/62a03dc0b0.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 <script th:src="@{js/my.js}"></script>
+<script th:src="@{js/chatHandler.js}"></script>
 </body>
 </html>
