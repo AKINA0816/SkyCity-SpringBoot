@@ -35,6 +35,4 @@ password varchar(30) not null
 
 ### 2. For administrator
 
-- Create, read, update and delete users
-
 
