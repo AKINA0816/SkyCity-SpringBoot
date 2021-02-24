@@ -13,14 +13,14 @@ public class BackEndController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         // if not login
         if (authentication == null || AnonymousAuthenticationToken.class.isAssignableFrom(authentication.getClass())){
-            return "backend";
+            return "/backend";
         }else { // logined in
-            return "redirect:backend/data";
+            return "redirect:backend/listUser";
         }
     }
 
-    @RequestMapping("/backend/data")
-    public String data(){
-        return "backend/data";
-    }
+//    @RequestMapping("/backend/home")
+//    public String data(){
+//        return "backend/listUser";
+//    }
 }

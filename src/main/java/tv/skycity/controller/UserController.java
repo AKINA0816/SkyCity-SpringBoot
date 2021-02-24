@@ -1,5 +1,8 @@
 package tv.skycity.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -59,4 +63,22 @@ public class UserController {
         return map;
     }
 
+    @RequestMapping("/backend/listUser")
+    public String listAllUser(Model model,
+                              @RequestParam(value = "start", defaultValue = "0") int start,
+                              @RequestParam(value = "size", defaultValue = "10") int size)
+    {
+        List<User> users = userMapper.getAll();
+
+        PageHelper.startPage(start, size,"id dsec");
+        PageInfo<User> pageInfo = new PageInfo<>(users);
+        model.addAttribute("pageInfo", pageInfo);
+        return "/backend/listUser";
+    }
+
+    @RequestMapping("/backend/deleteUser")
+    public String deleteUser(User user){
+        userMapper.deleteUser(user);
+        return "redirect:/backend/listUser";
+    }
 }

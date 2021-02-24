@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()// disable this because login modal is ajax post
             .authorizeRequests()
-                .antMatchers("/backend/data")
+                .antMatchers("/backend/listUser")
                     .hasRole("Staff")
                 .antMatchers("/","/**").permitAll()
 
@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/backend")
                 .loginProcessingUrl("/backend")
-                .defaultSuccessUrl("/backend/data")
+                .defaultSuccessUrl("/backend/listUser")
 
             .and()
                 .logout()
