@@ -39,4 +39,9 @@ public class IndexController {
         return "userSetting";
     }
 
+    @RequestMapping("/map")
+    public String map(Model model, HttpServletRequest httpServletRequest){
+        return "map";
+    }
+
 }
